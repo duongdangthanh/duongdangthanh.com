@@ -1,0 +1,22 @@
+{
+  "name": "duongdangthanh.com",
+  "version": "1.0.0",
+  "description": "duongdangthanh.com",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duongdangthanh/duongdangthanh.com.git"
+  },
+  "author": "thanh.duong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duongdangthanh/duongdangthanh.com/issues"
+  },
+  "homepage": "https://github.com/duongdangthanh/duongdangthanh.com#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
