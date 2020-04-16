@@ -1,22 +1,21 @@
 {
-  "name": "duongdangthanh.com",
+  "name": "cbs-dynamo",
   "version": "1.0.0",
-  "description": "duongdangthanh.com",
-  "main": "app.js",
+  "description": "CBS Server with Dynamo DB",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/duongdangthanh/duongdangthanh.com.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy-create": "claudia create --handler lambda.handler --deploy-proxy-api --region ap-southeast-1",
+    "deploy": "claudia update"
   },
   "author": "thanh.duong",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/duongdangthanh/duongdangthanh.com/issues"
-  },
-  "homepage": "https://github.com/duongdangthanh/duongdangthanh.com#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dynamoose": "^1.11.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "passport-jwt": "^4.0.0",
+    "uuid": "^7.0.3"
   }
 }
