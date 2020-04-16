@@ -12,6 +12,15 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/ping', (req, res) => {
+  return res.send("Pong");
+});
+
+app.post('/ping', (req, res) => {
+  const { email, password } = req.body;
+  return res.send({ email, password });
+});
+
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
 
