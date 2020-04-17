@@ -1,29 +1,22 @@
-const User = require('./../db/schemas/User.shema');
+const _ = require('lodash');
+const users = [{
+  email: "covid@group4.com",
+  salt: "2ed1",
+  password: "fb027ad40f693f119b0af34b0cb7eb01810dd9ccc412ff2096ccdda2eb662405",
+  id: 1,
+}];
 
 exports.createUser = async (data) => {
-  return User.create({
-      ...data,
-    }).then(user => {
-      return user;
-    }).catch(err => {
-      throw err;
-    });
+  const id = _.maxBy(users, 'id' ).id + 1;
+  const newUser = {...data, id};
+  users.push(newUser);
+  return newUser;
 };
 
 exports.getByEmail = (email) => {
-  return User.get({ email })
-    .then(user => {
-      return user;
-    }).catch(err => {
-      throw err;
-    });
+  return _.find(users, user => user.email === email);
 };
 
 exports.getAllUser = async () => {
-  return User.scan().exec()
-    .then(users => {
-      return users;
-    }).catch(err => {
-      throw err;
-    });
+  return users;
 };

@@ -10,16 +10,9 @@ const _hashPasswordWithSalt = (password, salt) => {
   return hash.digest('hex');
 };
 
-const userData = {
-  email: "covid@group4.com",
-  salt: "2ed1",
-  password: "fb027ad40f693f119b0af34b0cb7eb01810dd9ccc412ff2096ccdda2eb662405",
-  id: 1,
-}
-
 exports.login = async({ email, password }) => {
   try {
-    const userInfo = userData.email === email ? userData : null;
+    const userInfo = await userModel.getByEmail(email);
 
     if (!userInfo) {
       throw {
